@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from "@angular/core";
 import {
   AbstractControl,
   FormControl,
@@ -9,7 +14,8 @@ import {
 @Component({
   selector: "app-login-form",
   templateUrl: "./login-form.component.html",
-  styleUrls: ["./login-form.component.scss"],
+  styleUrls: ["./login-form.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
   public loginForm: FormGroup;
