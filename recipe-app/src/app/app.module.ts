@@ -37,7 +37,8 @@ import { AuthComponent } from './auth/auth.component';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    AuthComponent
+    AuthComponent,
+    LoginFormComponent
   
   ],
   imports: [
@@ -56,6 +57,7 @@ export class AppModule {}
 // Firebase ?
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { LoginFormComponent } from './login-form/login-form.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAS2cji9Xq9OcdvQLoMXvydZOfsa_retaM",
