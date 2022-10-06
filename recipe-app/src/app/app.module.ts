@@ -38,7 +38,8 @@ import { AuthComponent } from './auth/auth.component';
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ContactUsComponent
   
   ],
   imports: [
@@ -58,6 +59,7 @@ export class AppModule {}
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { LoginFormComponent } from './login-form/login-form.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAS2cji9Xq9OcdvQLoMXvydZOfsa_retaM",
