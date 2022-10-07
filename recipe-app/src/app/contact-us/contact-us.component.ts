@@ -1,24 +1,25 @@
-import { ChangeDetectionStrategy, 
-  Component, 
-  OnInit, 
-  EventEmitter, 
-  Output 
-} from '@angular/core';
-import { FormControl, 
-  FormGroup, 
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+} from "@angular/core";
+import {
+  FormControl,
+  FormGroup,
   AbstractControl,
   Validators,
-  MinLengthValidator
-} from '@angular/forms';
-
+  MinLengthValidator,
+} from "@angular/forms";
 
 @Component({
-  selector: 'app-contact-us',
-  templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css'],
+  selector: "app-contact-us",
+  templateUrl: "./contact-us.component.html",
+  styleUrls: ["./contact-us.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent {
   public contactForm: FormGroup;
 
   public get email(): AbstractControl | null {
@@ -35,21 +36,19 @@ export class ContactUsComponent implements OnInit {
 
   @Output() formSubmit = new EventEmitter<{
     email: string;
-    reason: string; 
+    reason: string;
     description: string;
   }>();
 
-  constructor() { 
+  constructor() {
     this.contactForm = this._buildForm();
-    
-   
   }
 
   public onSubmit() {
     this.contactForm.markAllAsTouched();
     if (this.contactForm.valid) {
       console.log("VALID!", this.contactForm.value);
-      this.formSubmit.emit(this.contactForm.value)
+      this.formSubmit.emit(this.contactForm.value);
     }
   }
 
@@ -58,12 +57,6 @@ export class ContactUsComponent implements OnInit {
       email: new FormControl("", [Validators.required, Validators.email]),
       reason: new FormControl("", [Validators.required]),
       descripion: new FormControl("", [Validators.required]),
-     } )}
-
-
-
-  ngOnInit(): void {
+    });
   }
-
-
 }

@@ -40,7 +40,10 @@ export class LoginFormComponent {
   public submit(): void {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.valid) {
-      console.log("VALID!", this.loginForm.value);
+      console.log(
+        "Valid form values from LoginFormComponent",
+        this.loginForm.value
+      );
       this.formSubmit.emit(this.loginForm.value);
     }
   }
